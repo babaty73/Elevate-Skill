@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Switcher App</title>
+
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      transition: background-color 0.3s;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="btn">Change Color</button>
+
+  <script>
+    const btn = document.getElementById("btn");
+
+    const colors = ["red", "blue", "green", "purple", "orange"];
+    let index = 0;
+
+    btn.addEventListener("click", () => {
+      document.body.style.backgroundColor = colors[index];
+      index++;
+
+      if (index === colors.length) {
+        index = 0;
+      }
+    });
+  </script>
+
+</body>
+</html>

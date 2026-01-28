@@ -1,0 +1,16 @@
+.decor{
+    color:blue;
+    text-decoration: underline;
+    background-color: lightblue;
+    padding: 1px;
+    margin: 6px;
+    width:250px;
+}
+.container{
+    display: flex;
+}
+.box{
+    width: 50%;
+    border:2px solid black;
+    box-sizing:border-box;
+}

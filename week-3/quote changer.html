@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mini-project quotes</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 300px;
+            padding: 15px;
+            border: 2px solid black;
+            background-color: aliceblue;
+            text-align: center;
+            box-shadow: 4px 4px 10px;
+            border-radius: 10px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: aqua;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+            .button:disabled {
+                background-color: gray;
+                cursor: not-allowed;
+            }
+
+        .author {
+            font-style: italic;
+            margin-top: 5px;
+            color: #030303;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="quote">Life doesn't get easier; you just get stronger.</p>
+        <p id="author" class="author"><strong>Imran</strong></p>
+        <p class="button" id="nextBtn"><strong>Next</strong></p>
+    </div>
+
+    <script>
+        const quotes = [
+            { text: "Life doesn't get easier; you just get stronger.", author: "Imran" },
+            { text: "The best way to get started is to quit talking and begin doing.", author: "Walt Disney" },
+            { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson" },
+            { text: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+            { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" }
+        ];
+
+        const quoteElement = document.getElementById("quote");
+        const authorElement = document.getElementById("author");
+        const nextBtn = document.getElementById("nextBtn");
+
+        let remainingQuotes = [...quotes];
+
+        function showNextQuote() {
+            if (remainingQuotes.length === 0) {
+                nextBtn.textContent = "No more quotes";
+                nextBtn.style.backgroundColor = "gray";
+                nextBtn.style.cursor = "not-allowed";
+                return;
+            }
+            const randomIndex = Math.floor(Math.random() * remainingQuotes.length);
+            const selected = remainingQuotes.splice(randomIndex, 1)[0];
+            quoteElement.textContent = selected.text;
+            authorElement.innerHTML = "<strong>" + selected.author + "</strong>";
+        }
+        nextBtn.addEventListener("click", showNextQuote);
+        document.addEventListener("keydown", (event) => {
+            if (event.key.toLowerCase() === "n") {
+                showNextQuote();
+            }
+        });
+    </script>
+</body>
+</html>
+
+

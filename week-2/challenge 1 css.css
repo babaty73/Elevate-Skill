@@ -1,0 +1,57 @@
+﻿.container{
+    width:320px;
+    padding:16px;
+    box-shadow:2px 4px 8px;
+    column-gap:8px;
+    margin:20px;
+    border:2px black;
+}
+.badge{
+    font-family:Arial;
+    color:blue;
+    width:62px;
+  display: inline-block;
+  padding: 6px 10px;
+  background: #eee;
+  border-radius: 6px;
+   background-color:rgb(175, 242, 228)
+  
+}
+
+.badgee{
+    width:52px;
+  display: inline-block;
+  padding: 6px 10px;  
+}
+   
+  .but:hover{
+         cursor:pointer;
+    }
+.but{
+     border-radius: 6px;
+    font-family:Arial;
+    margin-top:0px;
+    padding:50px;
+    color:white;
+    padding:4px;
+    background-color:rgb(18, 68, 233);
+    margin-left:250px;
+}
+.grid{
+    display:flex;
+    column-gap:6px;
+    align-items:flex-start;
+    width:99px; 
+}
+ul{
+    margin-top:1px;
+    padding:1px
+}
+.box{
+    width:160px;
+    padding:20px;
+   column-gap:2px;
+    border:2px black;
+    margin:1px;
+ 
+}
